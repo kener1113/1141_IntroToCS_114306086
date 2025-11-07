@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About -- 114306086</title>
+<style>
+  /* 外框與基本樣式 */
+  table          { border-collapse: collapse; width: 900px; margin: 0 auto; }
+  td             { border: 2px solid #555; padding: 10px; font-size: 20px; }
+  .title         { text-align: center; font-weight: bold; font-size: 26px; padding: 8px; }
+
+  /* 左側照片：置中(含垂直置中) */
+  .photo-cell    { width: 220px; text-align: center; vertical-align: middle; }
+  .photo         { width: 180px; height: auto; display: block; margin: 0 auto; }
+  .caption       { display: block; margin-top: 6px; }
+
+  /* 欄位元件 */
+  input[type="text"], input[type="email"] { width: 320px; height: 28px; font-size: 18px; }
+  select, input[type="date"]               { font-size: 18px; height: 28px; }
+  textarea       { width: 450px; height: 90px; font-size: 18px; }
+
+  .left-label    { width: 180px; font-size: 22px; white-space: nowrap; }
+  .actions input { font-size: 18px; padding: 6px 14px; margin-right: 12px; }
+
+  /* ✅ County / Birthday 的「細細格子」 */
+  .mini-table            { width: 100%; border-collapse: collapse; }
+  .mini-table td         { border: 1px solid #888; padding: 8px; } /* 細邊框 */
+  .mini-table td.divider { border-left: 1px solid #888; }          /* 中間分隔線保留 */
+</style>
+</head>
+<body>
+
+<table>
+  <!-- 標題在格線內 -->
+  <tr>
+    <td colspan="2" class="title">About -- 114306086</td>
+  </tr>
+
+  <!-- 左：照片；右：Name + Gender（同格兩行） -->
+  <tr>
+    <td class="photo-cell" rowspan="4">
+      <img src="IMG_4393.jpg" alt="personal photo" class="photo">
+      <span class="caption">personal photo</span>
+    </td>
+    <td>
+      Name:
+      <input type="text">
+      <br><br>
+      Gender:
+      <label><input type="radio" name="g"> Male</label>
+      <label><input type="radio" name="g"> Female</label>
+      <label><input type="radio" name="g"> Other</label>
+    </td>
+  </tr>
+
+  <!-- ✅ County 與 Birthday：各自有細格子，彼此之間有分隔線 -->
+  <tr>
+    <td>
+      <table class="mini-table">
+        <tr>
+          <td>
+            County:
+            <select>
+              <option>Taipei</option>
+              <option>Tainan</option>
+              <option>Taichung</option>
+              <option>Taoyuan</option>
+            </select>
+          </td>
+          <td class="divider">
+            Birthday:
+            <input type="date">
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- E-mail（無 placeholder） -->
+  <tr>
+    <td>
+      E-mail:
+      <input type="email">
+    </td>
+  </tr>
+
+  <!-- 佔位行，讓上方 rowspan=4 取得正確高度（可保留） -->
+  <tr><td style="padding:0; border:none;"></td></tr>
+
+  <!-- Hobby -->
+  <tr>
+    <td class="left-label">Hobby</td>
+    <td>
+      <label><input type="checkbox"> Swimming</label>
+      <label><input type="checkbox"> Volleyball</label>
+      <label><input type="checkbox"> Movie</label>
+      <label><input type="checkbox"> Game</label>
+      <label><input type="checkbox"> sleep</label>
+    </td>
+  </tr>
+
+  <!-- Skill -->
+  <tr>
+    <td class="left-label">Skill</td>
+    <td>
+      <label><input type="checkbox"> Java</label>
+      <label><input type="checkbox"> HTML</label>
+      <label><input type="checkbox"> Python</label>
+      <label><input type="checkbox"> Microsoft Office</label>
+      <label><input type="checkbox"> Premiere</label>
+    </td>
+  </tr>
+
+  <!-- Say Something（顯示 placeholder） -->
+  <tr>
+    <td class="left-label">Say Something</td>
+    <td><textarea placeholder="Say something here."></textarea></td>
+  </tr>
+
+  <!-- 按鈕 -->
+  <tr>
+    <td colspan="2" class="actions">
+      <input type="submit" value="提交">
+      <input type="reset" value="重設">
+    </td>
+  </tr>
+</table>
+
+
+
+</body>
+</html>
