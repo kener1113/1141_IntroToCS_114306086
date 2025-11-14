@@ -1,0 +1,107 @@
+/* 全域設定 --------------------------------------------------- */
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* 頁首 ------------------------------------------------------- */
+#main-header {
+    background-color: #2196f3;
+    color: white;
+    text-align: center;
+    padding: 40px 0 30px;
+}
+
+#page-title {
+    font-size: 56px;
+    margin: 0 0 10px;
+}
+
+#page-subtitle {
+    font-size: 22px;
+    margin: 0;
+}
+
+/* 導覽列 ----------------------------------------------------- */
+#main-nav {
+    background-color: #263238;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    padding: 14px 40px;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-link:hover {
+    background-color: #1a237e;
+}
+
+/* 下拉選單 --------------------------------------------------- */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #263238;
+    min-width: 340px;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.dropdown-item:hover {
+    background-color: #37474f;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* 主要內容 --------------------------------------------------- */
+#content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+#email-link {
+    color: #0d47a1;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #e3f2fd;
+    padding: 2px 4px;
+}
+
+#email-link:hover {
+    text-decoration: underline;
+}
+
