@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>114306086_HW6_1A2B</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #record {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>114306086_1A2B</h1>
+
+<label>Enter 4 unique numbers</label>
+<input id="guessInput" type="text" maxlength="4">
+<button onclick="play()">Guess!</button>
+
+<div id="record">
+    <b>Game Record :</b>
+    <div id="log"></div>
+</div>
+
+<script>
+    function generateAnswer() {
+        var nums = ["0","1","2","3","4","5","6","7","8","9"];
+        var ans = "";
+        while (ans.length < 4) {
+            var idx = Math.floor(Math.random() * nums.length);
+            ans += nums[idx];
+            nums.splice(idx, 1);
+        }
+        return ans;
+    }
+
+    var answer = generateAnswer();
+    var count = 0;
+
+    function isValid(str) {
+        if (str.length !== 4) return false;
+        if (!/^\d{4}$/.test(str)) return false;
+        return new Set(str).size === 4;
+    }
+
+    function checkAB(guess, ans) {
+        var A = 0, B = 0;
+        for (var i = 0; i < 4; i++) {
+            if (guess[i] === ans[i]) A++;
+            else if (ans.includes(guess[i])) B++;
+        }
+        return A + "A" + B + "B";
+    }
+
+    function play() {
+        var input = document.getElementById("guessInput");
+        var guess = input.value;
+
+        if (!isValid(guess)) {
+            alert("Invalid input! Enter 4 unique digits.");
+            return;
+        }
+
+        count++;
+        var result = checkAB(guess, answer);
+
+        var log = document.getElementById("log");
+        log.innerHTML += "第" + count + "次: " + guess + " → " + result + "<br>";
+
+        if (result === "4A0B") {
+            alert("Correct! Total attempts: " + count);
+        }
+
+        input.value = "";
+    }
+</script>
+
+</body>
+</html>
+
